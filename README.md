@@ -9,7 +9,7 @@ The `docker-compose.yml` file defines the necessary services for the application
 
 ### Environment Files
 
-Environment files (`env_file`) are used to set environment-specific variables (e.g., development, production). The environment files are located in the `secrets` directory and follow the format `envs.<ENV>.sh`.
+Environment files are used to set environment-specific variables (e.g., dev, prod). The environment files are located in the `secrets` directory and follow the format `envs.<ENV>.sh`.
 
 To use these environment files, you first need to download the pertinent file using the command:
 
@@ -146,7 +146,3 @@ The typical order of commands to set up and run the project is as follows:
    ```sh
    make up
    ```
-
-## Contribution
-
-If you wish to contribute to this project, please follow best practices for development and ensure that your changes are adequately tested.
