@@ -30,8 +30,6 @@ SECRET_KEY = 'django-insecure-$f-l%iop9(jxk*w18=4$tfovl3=$7n^#*s46do&j-v7f-&pw-p
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-CORS_ALLOW_ALL_ORIGINS = True
-
 
 # Application definition
 
@@ -44,11 +42,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'counters',
-    'corsheaders'
+    'corsheaders',  # Asegúrate de que está aquí
 ]
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',  # Asegúrate de que está al principio
     'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -133,4 +131,18 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 10
 }
 
-from challenge.app_settings import * 
+# Configuración de CORS
+CORS_ALLOW_ALL_ORIGINS = True
+
+# Si prefieres especificar los orígenes permitidos
+# CORS_ALLOWED_ORIGINS = [
+#     "http://localhost:3000",
+#     "http://your-frontend-domain.com",
+# ]
+
+# Configuraciones adicionales de CORS si es necesario
+CORS_ALLOW_HEADERS = ['*']
+CORS_ALLOW_METHODS = ['*']
+CORS_EXPOSE_HEADERS = ['Content-Type', 'X-CSRFToken']
+
+from challenge.app_settings import *
